@@ -3,56 +3,56 @@ if not status then return false end
 
 local act = wezterm.action
 
-local config = {
-	launch_menu = {},
+local config = {}
 
-	-- Shell
-	default_prog = { '/usr/local/bin/fish', '-l' },
+config.launch_menu = {}
 
-	-- Font
-	font = wezterm.font('JetBrainsMono Nerd Font'),
-	font_size = 11.0,
+-- Shell
+config.default_prog = { '/usr/local/bin/fish', '-l' }
 
-	-- Window
-	initial_cols = 110,
-	initial_rows = 38,
-	window_decorations = 'TITLE | RESIZE',
-	--window_decorations = 'RESIZE',
-	native_macos_fullscreen_mode = true,
+-- Font
+config.font = wezterm.font('JetBrainsMono Nerd Font')
+config.font_size = 11.0
 
-	-- Tab Bar
-	enable_tab_bar = true,
-	hide_tab_bar_if_only_one_tab = true,
-	show_tabs_in_tab_bar = true,
-	show_new_tab_button_in_tab_bar = false,
-	use_fancy_tab_bar = false,
+-- Window
+config.initial_cols = 110
+config.initial_rows = 38
+config.window_decorations = 'TITLE | RESIZE'
+--window_decorations = 'RESIZE'
+config.native_macos_fullscreen_mode = true
 
-	-- Key Binds
-	disable_default_key_bindings = true,
-	keys = {
-		{ key='c', mods='SUPER', action=act.CopyTo('Clipboard') },
-		{ key='v', mods='SUPER', action=act.PasteFrom('Clipboard') },
-		{ key='-', mods='SUPER', action=act.DecreaseFontSize },
-		{ key='=', mods='SUPER', action=act.IncreaseFontSize },
-		{ key='0', mods='SUPER', action=act.ResetFontSize },
-		{ key='w', mods='SUPER', action=act.CloseCurrentTab({confirm=true}) },
-		{ key='r', mods='SUPER', action=act.ReloadConfiguration },
-		{ key='n', mods='SUPER', action=act.SpawnWindow },
-	},
+-- Tab Bar
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.show_tabs_in_tab_bar = true
+config.show_new_tab_button_in_tab_bar = false
+config.use_fancy_tab_bar = false
 
-	-- Mouse Bindings
-	disable_default_mouse_bindings = false,
-	mouse_bindings = {
-	},
-
-	-- Colors
-	color_scheme = "Kanagawa",
-
-	-- Other
-	send_composed_key_when_left_alt_is_pressed = false,
-	send_composed_key_when_right_alt_is_pressed = true,
-	use_dead_keys = false,
+-- Key Binds
+config.disable_default_key_bindings = true
+config.keys = {
+	{ key='c', mods='SUPER', action=act.CopyTo('Clipboard') },
+	{ key='v', mods='SUPER', action=act.PasteFrom('Clipboard') },
+	{ key='-', mods='SUPER', action=act.DecreaseFontSize },
+	{ key='=', mods='SUPER', action=act.IncreaseFontSize },
+	{ key='0', mods='SUPER', action=act.ResetFontSize },
+	{ key='w', mods='SUPER', action=act.CloseCurrentTab({confirm=true}) },
+	{ key='r', mods='SUPER', action=act.ReloadConfiguration },
+	{ key='n', mods='SUPER', action=act.SpawnWindow },
 }
+
+-- Mouse Bindings
+config.disable_default_mouse_bindings = false
+config.mouse_bindings = {}
+
+-- Colors TODO
+config.colors = {}
+
+-- Other
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = true
+config.use_dead_keys = false
+
 
 local function get_cell_size()
 	-- TODO: some kind of automatic way to calculate cell size
@@ -79,20 +79,13 @@ local function recompute_padding(window)
 	window:set_config_overrides(overrides)
 end
 
-local mux = wezterm.mux
 wezterm.on('gui-startup', function()
-	local _, _, window = mux.spawn_window {}
+	local _, _, window = wezterm.mux.spawn_window {}
 	window:gui_window():toggle_fullscreen()
 	recompute_padding(window)
 end)
 
-wezterm.on('window-resized', function(window, _)
-	recompute_padding(window)
-end)
-
-wezterm.on('window-config-reloaded', function(window)
-	recompute_padding(window)
-end)
+wezterm.on('window-resized', function(window, _) recompute_padding(window) end)
+wezterm.on('window-config-reloaded', function(window) recompute_padding(window) end)
 
 return config
-
