@@ -45,8 +45,9 @@ config.keys = {
 config.disable_default_mouse_bindings = false
 config.mouse_bindings = {}
 
--- Colors TODO
-config.colors = {}
+-- Colors
+local theme = require "colors.tireatheme"
+config.colors = theme
 
 -- Other
 config.send_composed_key_when_left_alt_is_pressed = false
