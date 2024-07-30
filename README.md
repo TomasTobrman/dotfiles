@@ -7,4 +7,4 @@ Personal collection of dotfiles that I use on my machines.
 - Fish
 - Neovim
 - XMonad + XMobar
-
+- Custom Scripts
