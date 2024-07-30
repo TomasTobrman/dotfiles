@@ -1,0 +1,16 @@
+[user]
+	email = 30987354+TomasTobrman@users.noreply.github.com
+	name = Tomáš Tobrman
+	signingKey = /home/tirea/.ssh/id_ed25519
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[gpg]
+	format = ssh
+[commit]
+	gpgSign = true
+[init]
+	defaultBranch = main
