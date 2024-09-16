@@ -10,4 +10,6 @@ if status is-interactive
 
 	fish_add_path "$HOME/bin"
 	fish_add_path "/etc/sudoers.d"
+
+	alias pacman-clear='sudo pacman -Rsn $(pacman -Qdtq)'
 end
