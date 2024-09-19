@@ -11,6 +11,8 @@ return {
 			lua_ls = require("plugins.lsp.lua_ls"),
 			astro = require("plugins.lsp.astro"),
 			intelephense = require("plugins.lsp.intelephense"),
+			jdtls = require("plugins.lsp.jdtls"),
+			omnisharp = require("plugins.lsp.omnisharp"),
 		}
 
 		local opts = { noremap = true, silent = true }
