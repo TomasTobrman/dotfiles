@@ -51,4 +51,6 @@ fi
 nitrogen --restore &
 picom &
 dunst &
+nm-applet &
+dwmblocks &
 exec dwm
