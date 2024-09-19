@@ -1,0 +1,39 @@
+#ifndef _OXOCARBON_H_
+#define _OXOCARBON_H_
+
+#define OXOCARBON_BASE00 "#161616"
+#define OXOCARBON_BASE01 "#262626"
+#define OXOCARBON_BASE02 "#393939"
+#define OXOCARBON_BASE03 "#525252"
+#define OXOCARBON_BASE04 "#dde1e6"
+#define OXOCARBON_BASE05 "#f2f4f8"
+#define OXOCARBON_BASE06 "#ffffff"
+#define OXOCARBON_BASE07 "#08bdba"
+#define OXOCARBON_BASE08 "#3ddbd9"
+#define OXOCARBON_BASE09 "#78a9ff"
+#define OXOCARBON_BASE0A "#ee5396"
+#define OXOCARBON_BASE0B "#33b1ff"
+#define OXOCARBON_BASE0C "#ff7eb6"
+#define OXOCARBON_BASE0D "#42be65"
+#define OXOCARBON_BASE0E "#be95ff"
+#define OXOCARBON_BASE0F "#82cfff"
+
+#define OXOCARBON_ANSI_BLACK     "#262626"
+#define OXOCARBON_ANSI_RED       "#ee5396"
+#define OXOCARBON_ANSI_GREEN     "#42be65"
+#define OXOCARBON_ANSI_YELLOW    "#ffe97b"
+#define OXOCARBON_ANSI_BLUE      "#33b1ff"
+#define OXOCARBON_ANSI_MAGENTA   "#ff7eb6"
+#define OXOCARBON_ANSI_CYAN      "#3ddbd9"
+#define OXOCARBON_ANSI_WHITE     "#dde1e6"
+
+#define OXOCARBON_BRIGHT_BLACK   "#393939"
+#define OXOCARBON_BRIGHT_RED     "#ee5396"
+#define OXOCARBON_BRIGHT_GREEN   "#42be65"
+#define OXOCARBON_BRIGHT_YELLOW  "#ffe97b"
+#define OXOCARBON_BRIGHT_BLUE    "#33b1ff"
+#define OXOCARBON_BRIGHT_MAGENTA "#ff7eb6"
+#define OXOCARBON_BRIGHT_CYAN    "#3ddbd9"
+#define OXOCARBON_BRIGHT_WHITE   "#ffffff"
+
+#endif /* ifndef _OXOCARBON_H_ */
