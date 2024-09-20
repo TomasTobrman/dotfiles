@@ -16,3 +16,5 @@ else
             ;;
     esac
 fi
+
+pkill -RTMIN+2 dwmblocks
