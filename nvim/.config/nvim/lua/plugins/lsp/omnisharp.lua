@@ -1,5 +1,5 @@
 return {
-	cmd = { "dotnet", "/home/tirea/.local/share/nvim/mason/packages/omnisharp-mono/omnisharp/OmniSharp.Roslyn.dll" },
+	cmd = { "/home/tirea/.local/share/nvim/mason/packages/omnisharp/omnisharp" },
 	settings = {
 		FormattingOptions = {
 			-- Enables support for reading code style, naming convention and analyzer
